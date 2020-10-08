@@ -9,8 +9,8 @@ public class Main
         double leg1 = readDouble("first");
         double leg2 = readDouble("second");
 
-        System.out.printf("Area of a triangle: %.5f\n", calculateArea(leg1, leg2));
-        System.out.printf("Perimeter of a triangle: %.5f\n", calculatePerimeter(leg1, leg2));
+        printResult("Area", calculateArea(leg1, leg2));
+        printResult("Perimeter", calculatePerimeter(leg1, leg2));
     }
 
     private static double calculateArea(double leg1, double leg2)
@@ -33,6 +33,11 @@ public class Main
         System.out.printf("Input the %s leg of the triangle: ", name);
         Scanner scan = new Scanner(System.in);
         return checkPositiveAndZero(scan.nextDouble());
+    }
+
+    private static void printResult (String name, double result)
+    {
+        System.out.printf("%s of a triangle: %.3f\n", name, result);
     }
 
     private static double checkPositiveAndZero(double number)
